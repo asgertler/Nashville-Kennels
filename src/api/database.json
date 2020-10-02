@@ -6,6 +6,20 @@
             "breed": "Poodle",
             "customerId": 1,
             "locationId": 2
+        },
+        {
+            "id": 2,
+            "name": "Bruce",
+            "breed": "Carolina Dog",
+            "customerId": 2,
+            "locationId": 3
+        },
+        {
+            "id": 3,
+            "name": "Scruffy",
+            "breed": "German Shepherd",
+            "customerId": 3,
+            "locationId": 4
         }
     ],
     "customers": [
@@ -13,9 +27,40 @@
             "id": 1,
             "name": "Hannah Hall",
             "address": "7002 Chestnut Ct"
+        },
+        {
+            "id": 2,
+            "name": "Aaron Gertler",
+            "address": "701 Skyview Dr"
+        },
+        {
+            "id": 3,
+            "name": "Michael Johnson",
+            "address": "913 Breckenridge Pkwy"
         }
     ],
-    "employees": [],
+    "employees": [
+        {
+            "id": 1,
+            "name": "Jeremy Baker",
+            "locationId": 2
+        },
+        {
+            "id": 2,
+            "name": "Julia Addams",
+            "locationId": 3
+        },
+        {
+            "id": 3,
+            "name": "Michelle Bower",
+            "locationId": 1
+        },
+        {
+            "id": 4,
+            "name": "Randy Stabler",
+            "locationId": 4
+        }
+    ],
     "locations": [
         {
             "id": 1,
@@ -26,6 +71,16 @@
             "id": 2,
             "name": "Nashville South",
             "address": "209 Emory Drive"
+        },
+        {
+            "id": 3,
+            "name": "Nashville East",
+            "address": "867 Gallatin Pk"
+        },
+        {
+            "id": 4,
+            "name": "Nashville West",
+            "address": "1001 West End Ave"
         }
     ]
 }
