@@ -1,7 +1,8 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 import { Home } from './Home'
-import { LocationCard } from './location/LocationCard'
+import { LocationProvider } from './location/LocationProvider'
+import { LocationList } from './location/LocationList'
 import { AnimalProvider } from './animal/AnimalProvider'
 import { AnimalList } from './animal/AnimalList'
 import { CustomerProvider } from './customer/CustomerProvider'
@@ -18,9 +19,11 @@ export const ApplicationViews = (props) => {
             </Route>
 
             {/* Render the location list when http://localhost:3000/locations */}
-            <Route path='/locations'>
-                <LocationCard />
-            </Route>
+            <LocationProvider>
+                <Route exact path='/locations'>
+                    <LocationList />
+                </Route>
+            </LocationProvider>
 
             {/* Render the animal list when http://localhost:3000/animals */}
             <AnimalProvider>
