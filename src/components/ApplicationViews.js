@@ -32,6 +32,16 @@ export const ApplicationViews = (props) => {
                 </Route>
             </AnimalProvider>
 
+            <AnimalProvider>
+                <CustomerProvider>
+                    <LocationProvider>
+                        <Route exact path="/animals/create">
+                            <AnimalForm />
+                        </Route>
+                    </LocationProvider>
+                </CustomerProvider>
+            </AnimalProvider>
+
             {/* Render the customer list when http://localhost:3000/customers */}
             <CustomerProvider>
                 <Route exact path='/customers'>
