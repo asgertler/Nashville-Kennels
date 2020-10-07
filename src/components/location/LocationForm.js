@@ -4,7 +4,7 @@ import "./Location.css"
 import { useHistory } from "react-router-dom"
 
 export const LocationForm = (props) => {
-    const { addLocation } = useContext(LocationContext)
+    const { addLocation, getLocations } = useContext(LocationContext)
 
     const name = useRef(null)
     const address = useRef(null)
@@ -40,6 +40,15 @@ export const LocationForm = (props) => {
                     <input type="text" id="locationAddress" ref={address} required className="form-control" placeholder="Location address" />
                 </div>
             </fieldset>
+
+            <button type="submit"
+                onClick={evt => {
+                    evt.preventDefault() // Prevent browser from submitting the form
+                    constructNewLocation()
+                }}
+                className="btn btn-primary">
+                Save Location
+            </button>
         </form>
     )
 }
