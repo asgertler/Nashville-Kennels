@@ -20,6 +20,27 @@
       "locationId": 3,
       "customerId": 2,
       "id": 3
+    },
+    {
+      "name": "Eleanor",
+      "breed": "German Shepherd/Husky",
+      "locationId": 1,
+      "customerId": 4,
+      "id": 4
+    },
+    {
+      "name": "Max",
+      "breed": "White Lab",
+      "locationId": 1,
+      "customerId": 4,
+      "id": 5
+    },
+    {
+      "name": "Sydney",
+      "breed": "Black Lab",
+      "locationId": 1,
+      "customerId": 4,
+      "id": 6
     }
   ],
   "customers": [
@@ -37,6 +58,11 @@
       "id": 3,
       "name": "Michael Johnson",
       "address": "913 Breckenridge Pkwy"
+    },
+    {
+      "id": 4,
+      "name": "April Murphy",
+      "address": "129 Ivy Hill Ln"
     }
   ],
   "employees": [
