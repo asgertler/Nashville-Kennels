@@ -1,5 +1,6 @@
 import React from "react"
 import "./Employee.css"
+import { Link } from "react-router-dom"
 
 export const EmployeeCard = ({ employee }) => (
     <section className="employee">

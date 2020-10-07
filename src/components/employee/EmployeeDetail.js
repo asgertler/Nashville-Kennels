@@ -3,7 +3,7 @@ import { EmployeeContext } from "./EmployeeProvider"
 import "./Employee.css"
 import { useParams, useHistory } from "react-router-dom"
 
-export const EmployeeDetails = () => {
+export const EmployeeDetail = () => {
     const { releaseEmployee, getEmployeeById } = useContext(EmployeeContext)
 
     const [employee, setEmployee] = useState({})
