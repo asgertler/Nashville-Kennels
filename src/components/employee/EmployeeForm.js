@@ -25,7 +25,7 @@ export const EmployeeForm = (props) => {
                 name: name.current.value,
                 locationId
             })
-                .then(() => history.pushState("/employees"))
+                .then(() => history.push("/employees"))
         }
     }
 
@@ -38,7 +38,7 @@ export const EmployeeForm = (props) => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="employeeName">Employee name:</label>
-                    <input type="text" id="employeeName" ref={name} required autoFocus className="form-control" placeholder="Employee name" />"
+                    <input type="text" id="employeeName" ref={name} required autoFocus className="form-control" placeholder="Employee name" />
                 </div>
             </fieldset>
 
