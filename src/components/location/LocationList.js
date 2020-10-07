@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { LocationContext } from './LocationProvider'
 import { LocationCard } from './LocationCard'
 import './Location.css'
@@ -24,7 +24,20 @@ export const LocationList = () => {
             <div className="locations">
                 {
                     locations.map(location => {
-                        return <LocationCard key={location.id} location={location} />
+                        const locationAnimals = (animal => {
+                            return animal.locationId === location.id
+                        })
+
+                        const locationEmployees = (employee => {
+                            return employee.locationId === location.id
+                        })
+
+                        return <LocationCard
+                            key={location.id}
+                            location={location}
+                            animals={locationAnimals}
+                            employees={locationEmployees}
+                        />
                     })
                 }
             </div>
