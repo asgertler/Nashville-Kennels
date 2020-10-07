@@ -11,13 +11,13 @@ export const EmployeeProvider = (props) => {
             .then(setEmployees)
     }
 
-    const addEmployee = location => {
-        return fetch('http://localhost:8088/customers', {
+    const addEmployee = employee => {
+        return fetch('http://localhost:8088/employees', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(location)
+            body: JSON.stringify(employee)
         })
             .then(getEmployees)
     }

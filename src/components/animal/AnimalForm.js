@@ -1,6 +1,6 @@
 import React, { useContext, useRef, useEffect } from "react"
 import { LocationContext } from "../location/LocationProvider"
-import { AnimalContext } from "../animal/AnimalProvider"
+import { AnimalContext } from "./AnimalProvider"
 import { CustomerContext } from "../customer/CustomerProvider"
 import "./Animal.css"
 import { useHistory } from "react-router-dom"
@@ -55,7 +55,7 @@ export const AnimalForm = (props) => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="animalBreed">Animal breed:</label>
-                    <input type="text" id="animalBreed" ref={breed} required autoFocus className="form-control" placeholder="Animal breed" />
+                    <input type="text" id="animalBreed" ref={breed} required className="form-control" placeholder="Animal breed" />
                 </div>
             </fieldset>
 
