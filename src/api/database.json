@@ -47,22 +47,26 @@
     {
       "id": 1,
       "name": "Hannah Hall",
-      "address": "7002 Chestnut Ct"
+      "address": "7002 Chestnut Ct",
+      "email": "hannah@gmail.com"
     },
     {
       "id": 2,
       "name": "Aaron Gertler",
-      "address": "701 Skyview Dr"
+      "address": "701 Skyview Dr",
+      "email": "aaron.gertler@gmail.com"
     },
     {
       "id": 3,
       "name": "Michael Johnson",
-      "address": "913 Breckenridge Pkwy"
+      "address": "913 Breckenridge Pkwy",
+      "email": "michael@gmail.com"
     },
     {
       "id": 4,
       "name": "April Murphy",
-      "address": "129 Ivy Hill Ln"
+      "address": "129 Ivy Hill Ln",
+      "email": "april@gmail.com"
     }
   ],
   "employees": [
