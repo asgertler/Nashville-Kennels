@@ -11,13 +11,13 @@ export const LocationProvider = (props) => {
             .then(setLocations)
     }
 
-    const addLocation = () => {
+    const addLocation = location => {
         return fetch('http://localhost:8088/locations', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify()
+            body: JSON.stringify(location)
         })
             .then(getLocations)
     }
