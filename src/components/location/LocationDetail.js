@@ -2,14 +2,13 @@ import React, { useContext, useEffect, useState } from "react"
 import { LocationContext } from "./LocationProvider"
 import "./Location.css"
 import { useParams, useHistory } from "react-router-dom"
-import { AnimalList } from "../animal/AnimalList"
 
 export const LocationDetail = () => {
     const { releaseLocation, getLocationById } = useContext(LocationContext)
 
     const [location, setLocation] = useState({})
-    const [animal, setAnimal] = useState({})
-    const [employee, setEmployee] = useState({})
+    const [animals, setAnimals] = useState([])
+    const [employees, setEmployees] = useState([])
 
     const { locationId } = useParams()
     const history = useHistory()
@@ -18,15 +17,35 @@ export const LocationDetail = () => {
         getLocationById(locationId)
             .then((res) => {
                 setLocation(res)
-                setAnimal(res.animal)
-                setEmployee(res.employee)
+                setAnimals(res.animals)
+                setEmployees(res.employees)
             })
     }, [])
 
     return (
         <section className="location">
             <h3 className="location--name">{location.name}</h3>
-            <div className="location--animals">Animals: {animal.name}</div>
+            <div className="location--address">{location.address}</div>
+
+            <div className="location--animals">
+                <h4>Animals:</h4>
+
+                <p>
+                    {
+                        animals.map(animal => animal.name).join(", ")
+                    }
+                </p>
+            </div>
+
+            <div className="location--employees">
+                <h4>Employees</h4>
+
+                <p>
+                    {
+                        employees.map(employee => employee.name).join(", ")
+                    }
+                </p>
+            </div>
         </section>
     )
 }

@@ -3,11 +3,9 @@ import { LocationContext } from './LocationProvider'
 import { LocationCard } from './LocationCard'
 import './Location.css'
 import { useHistory } from "react-router-dom"
-import { AnimalContext } from "../animal/AnimalProvider"
 
 export const LocationList = () => {
     const { locations, getLocations } = useContext(LocationContext)
-    const { animals, getAnimals } = useContext(AnimalContext)
 
     useEffect(() => {
         getLocations()
