@@ -130,13 +130,14 @@ export const AnimalForm = () => {
                 </div>
             </fieldset>
 
-            <button type="submit" className="btn btn-primary"
+            <button className="btn btn-primary"
                 disabled={isLoading}
                 onClick={event => {
                     event.preventDefault() // prevent browser from submitting the form
                     constructAnimalObject()
                 }}>
-                {animalId ? <>Save Animal</> : <>Add Animal</>}</button>
+                {animalId ? <>Save Animal</> : <>Add Animal</>}
+            </button>
         </form>
     )
 }
