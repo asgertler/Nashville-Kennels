@@ -25,11 +25,15 @@ export const ApplicationViews = (props) => {
             </Route>
 
             {/* Render the location list when http://localhost:3000/locations */}
-            <LocationProvider>
-                <Route exact path='/locations'>
-                    <LocationList />
-                </Route>
-            </LocationProvider>
+            <AnimalProvider>
+                <EmployeeProvider>
+                    <LocationProvider>
+                        <Route exact path='/locations'>
+                            <LocationList />
+                        </Route>
+                    </LocationProvider>
+                </EmployeeProvider>
+            </AnimalProvider >
 
             <LocationProvider>
                 <Route exact path="/locations/create">

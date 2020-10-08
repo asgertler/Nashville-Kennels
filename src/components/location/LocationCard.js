@@ -10,7 +10,7 @@ export const LocationCard = ({ location, animals, employees }) => (
             </Link>
         </h3>
         <address className="location__address">{location.address}</address>
-        <div class="location--animals">Animals: {animals.length}</div>
-        <div calss="location--employees">Employees: {employees.length}</div>
+        <div className="location--animals">Animals: {animals.length}</div>
+        <div className="location--employees">Employees: {employees.length}</div>
     </section>
 )

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { LocationContext } from './LocationProvider'
 import { LocationCard } from './LocationCard'
 import './Location.css'
@@ -23,7 +23,7 @@ export const LocationList = () => {
         <>
             <h2>Locations</h2>
 
-            <button onClick={() => { history.push("/locations/create") }}>
+            <button type="button" onClick={() => { history.push("/locations/create") }}>
                 Add Location
             </button>
 
