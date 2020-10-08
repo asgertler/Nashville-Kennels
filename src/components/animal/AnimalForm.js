@@ -48,7 +48,11 @@ export const AnimalForm = () => {
     }, [])
 
     const constructAnimalObject = () => {
-        if (parseInt(animal.locationId) === 0) {
+        if (!animal.name) {
+            window.alert("Please enter your pet's name")
+        } else if (!animal.breed) {
+            window.alert("Please enter your pet's breed")
+        } else if (parseInt(animal.locationId) === 0) {
             window.alert("Please select a location")
         } else if (parseInt(animal.customerId) === 0) {
             window.alert("Please select a customer")
