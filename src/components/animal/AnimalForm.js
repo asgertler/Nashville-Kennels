@@ -18,8 +18,25 @@ export const AnimalForm = (props) => {
     const customer = useRef(null)
     */
 
+    // for edit, hold on to state of animal in this view
+    const [animal, setAnimal] = useState({})
+
+    // wait for data before button is active
+    const [isLoading, setIsLoading] = useState(true)
+
     const { animalId } = useParams()
     const history = useHistory()
+
+    // when field changes, update state; this causes a re-render and updates the view
+    // controlled compponent
+    const handleControlledInputChange = (event) => {
+        // when changing a state object or array, alwayts create a copy, make changes, then set state
+        const newAnimal = { ...animal }
+        //animal is an obj with properties; set the property to new value
+        newAnimal[event.target.name] = event.target.value
+        // update state
+        setAnimal(newAnimal)
+    }
 
     // get animal & location state on initilization
     useEffect(() => {
