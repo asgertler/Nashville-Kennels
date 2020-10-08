@@ -3,18 +3,23 @@ import { LocationContext } from "../location/LocationProvider"
 import { AnimalContext } from "./AnimalProvider"
 import { CustomerContext } from "../customer/CustomerProvider"
 import "./Animal.css"
-import { useHistory } from "react-router-dom"
+import { useHistory, useParams } from "react-router-dom"
 
 export const AnimalForm = (props) => {
-    const { addAnimal } = useContext(AnimalContext)
+    const { addAnimal, getAnimalById, updateAnimal } = useContext(AnimalContext)
     const { locations, getLocations } = useContext(LocationContext)
     const { customers, getCustomers } = useContext(CustomerContext)
 
     // no more document.querySelector() from here on out, fam
+    /*
     const name = useRef(null)
     const breed = useRef(null)
     const location = useRef(null)
     const customer = useRef(null)
+    */
+
+    const { animalId } = useParams()
+    const history = useHistory()
 
     // get animal & location state on initilization
     useEffect(() => {
@@ -38,8 +43,6 @@ export const AnimalForm = (props) => {
                 .then(() => history.push("/animals"))
         }
     }
-
-    const history = useHistory()
 
     return (
         <form className="animalForm">
