@@ -4,8 +4,8 @@
       "id": 2,
       "name": "Scruffy",
       "breed": "German Shepherd",
-      "customerId": 3,
-      "locationId": 4
+      "locationId": 2,
+      "customerId": 3
     },
     {
       "name": "Bruce Wayne",

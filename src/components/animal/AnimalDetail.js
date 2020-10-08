@@ -29,7 +29,7 @@ export const AnimalDetail = () => {
             <div className="animal--location">Location: {location.name}</div>
             <div className="animal--owner">Customer: {customer.name}</div>
 
-            <button type="button" onClick={() => {
+            <button onClick={() => {
                 history.push(`/animals/edit/${animal.id}`)
             }}>Edit</button>
 

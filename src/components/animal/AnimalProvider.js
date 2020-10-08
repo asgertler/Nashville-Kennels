@@ -36,6 +36,7 @@ export const AnimalProvider = (props) => {
             },
             body: JSON.stringify(animal)
         })
+            .then(getAnimals)
     }
 
     const releaseAnimal = animalId => {

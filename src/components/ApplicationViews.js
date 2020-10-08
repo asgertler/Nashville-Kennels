@@ -73,7 +73,7 @@ export const ApplicationViews = (props) => {
             <AnimalProvider>
                 <CustomerProvider>
                     <LocationProvider>
-                        <Route exact path="/animals/edit:animalId(\d+)">
+                        <Route exact path="/animals/edit/:animalId(\d+)">
                             <AnimalForm />
                         </Route>
                     </LocationProvider>

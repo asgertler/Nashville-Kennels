@@ -10,28 +10,29 @@ export const AnimalForm = () => {
     const { locations, getLocations } = useContext(LocationContext)
     const { customers, getCustomers } = useContext(CustomerContext)
 
-    //for edit, hold on to state of animal in this view
+    // for edit, hold on to state of animal in this view
     const [animal, setAnimal] = useState({})
-    //wait for data before button is active
+    // wait for data before button is active
     const [isLoading, setIsLoading] = useState(true);
 
     const { animalId } = useParams();
     const history = useHistory();
 
-    //when field changes, update state. This causes a re-render and updates the view.
-    //Controlled component
+    // when field changes, update state. This causes a re-render and updates the view
+    // Controlled component
     const handleControlledInputChange = (event) => {
-        //When changing a state object or array, 
-        //always create a copy make changes, and then set state.
+        // when changing a state object or array, 
+        // always create a copy make changes, and then set state
         const newAnimal = { ...animal }
-        //animal is an object with properties. 
-        //set the property to the new value
+        // animal is an object with properties
+        // set the property to the new value
         newAnimal[event.target.name] = event.target.value
-        //update state
+        // update state
         setAnimal(newAnimal)
     }
 
-    // Get customers and locations. If animalId is in the URL, getAnimalById
+    // get customers and locations
+    // if animalId is in the URL, getAnimalById
     useEffect(() => {
         getCustomers().then(getLocations).then(() => {
             if (animalId) {
@@ -49,22 +50,26 @@ export const AnimalForm = () => {
     const constructAnimalObject = () => {
         if (parseInt(animal.locationId) === 0) {
             window.alert("Please select a location")
+        } else if (parseInt(animal.customerId) === 0) {
+            window.alert("Please select a customer")
         } else {
-            //disable the button - no extra clicks
+            // disable the button - no extra clicks
             setIsLoading(true);
             if (animalId) {
-                //PUT - update
+                // PUT - update
                 updateAnimal({
                     id: animal.id,
                     name: animal.name,
+                    breed: animal.breed,
                     locationId: parseInt(animal.locationId),
                     customerId: parseInt(animal.customerId)
                 })
                     .then(() => history.push(`/animals/detail/${animal.id}`))
             } else {
-                //POST - add
+                // POST - add
                 addAnimal({
                     name: animal.name,
+                    breed: animal.breed,
                     locationId: parseInt(animal.locationId),
                     customerId: parseInt(animal.customerId)
                 })
@@ -76,6 +81,7 @@ export const AnimalForm = () => {
     return (
         <form className="animalForm">
             <h2 className="animalForm__title">New Animal</h2>
+
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="animalName">Animal name: </label>
@@ -85,6 +91,17 @@ export const AnimalForm = () => {
                         defaultValue={animal.name} />
                 </div>
             </fieldset>
+
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="animalBreed">Animal breed: </label>
+                    <input type="text" id="animalBreed" name="breed" required className="form-control"
+                        placeholder="Animal breed"
+                        onChange={handleControlledInputChange}
+                        defaultValue={animal.breed} />
+                </div>
+            </fieldset>
+
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="location">Assign to location: </label>
@@ -98,6 +115,7 @@ export const AnimalForm = () => {
                     </select>
                 </div>
             </fieldset>
+
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="customer">Customer: </label>
@@ -111,10 +129,11 @@ export const AnimalForm = () => {
                     </select>
                 </div>
             </fieldset>
-            <button className="btn btn-primary"
+
+            <button type="submit" className="btn btn-primary"
                 disabled={isLoading}
                 onClick={event => {
-                    event.preventDefault() // Prevent browser from submitting the form
+                    event.preventDefault() // prevent browser from submitting the form
                     constructAnimalObject()
                 }}>
                 {animalId ? <>Save Animal</> : <>Add Animal</>}</button>
