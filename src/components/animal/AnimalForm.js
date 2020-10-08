@@ -52,9 +52,9 @@ export const AnimalForm = () => {
             window.alert("Please enter your pet's name")
         } else if (!animal.breed) {
             window.alert("Please enter your pet's breed")
-        } else if (parseInt(animal.locationId) === 0) {
+        } else if (parseInt(animal.locationId) === 0 || !animal.locationId) {
             window.alert("Please select a location")
-        } else if (parseInt(animal.customerId) === 0) {
+        } else if (parseInt(animal.customerId) === 0 || !animal.customerId) {
             window.alert("Please select a customer")
         } else {
             // disable the button - no extra clicks

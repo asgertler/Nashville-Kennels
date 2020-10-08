@@ -8,11 +8,11 @@
       "customerId": 3
     },
     {
+      "id": 3,
       "name": "Bruce Wayne",
       "breed": "Beagle/Carolina Dog",
-      "locationId": 3,
-      "customerId": 2,
-      "id": 3
+      "locationId": 1,
+      "customerId": 2
     },
     {
       "name": "Eleanor",
