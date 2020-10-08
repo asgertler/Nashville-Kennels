@@ -55,6 +55,12 @@ export const ApplicationViews = (props) => {
             </AnimalProvider>
 
             <AnimalProvider>
+                <Route exact path="/animals/detail/:animalId(\d+)">
+                    <AnimalDetail />
+                </Route>
+            </AnimalProvider>
+
+            <AnimalProvider>
                 <CustomerProvider>
                     <LocationProvider>
                         <Route exact path="/animals/create">
@@ -65,9 +71,13 @@ export const ApplicationViews = (props) => {
             </AnimalProvider>
 
             <AnimalProvider>
-                <Route exact path="/animals/detail/:animalId(\d+)">
-                    <AnimalDetail />
-                </Route>
+                <CustomerProvider>
+                    <LocationProvider>
+                        <Route exact path="/animals/edit:animalId(\d+)">
+                            <AnimalForm />
+                        </Route>
+                    </LocationProvider>
+                </CustomerProvider>
             </AnimalProvider>
 
             {/* Render the customer list when http://localhost:3000/customers */}
