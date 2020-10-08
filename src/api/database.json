@@ -1,13 +1,6 @@
 {
   "animals": [
     {
-      "id": 1,
-      "name": "Doodles",
-      "breed": "Poodle",
-      "customerId": 1,
-      "locationId": 2
-    },
-    {
       "id": 2,
       "name": "Scruffy",
       "breed": "German Shepherd",
@@ -41,6 +34,13 @@
       "locationId": 1,
       "customerId": 4,
       "id": 6
+    },
+    {
+      "name": "Sport",
+      "breed": "Shi-Tzu",
+      "locationId": 5,
+      "customerId": 1,
+      "id": 7
     }
   ],
   "customers": [
