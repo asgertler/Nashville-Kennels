@@ -29,6 +29,13 @@ export const AnimalProvider = (props) => {
             .then(getAnimals)
     }
 
+    const releaseAnimal = animalId => {
+        return fetch(`http://localhost:3000/animals/${animalId}`, {
+            method: "DELETE"
+        })
+            .then(getAnimals)
+    }
+
     const getAnimalById = (id) => {
         return fetch(`http://localhost:8088/animals/${id}?_expand=location&_expand=customer`)
             .then(res => res.json())
