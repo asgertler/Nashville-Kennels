@@ -28,6 +28,15 @@ export const AnimalDetail = () => {
             <div className="animal--breed">{animal.breed}</div>
             <div className="animal--location">Location: {location.name}</div>
             <div className="animal--owner">Customer: {customer.name}</div>
+
+            <button onClick={
+                () => {
+                    releaseAnimal(animal.id)
+                        .then(() => {
+                            history.push("/animals")
+                        })
+                }}>Release Animal
+            </button>
         </section>
     )
 }
